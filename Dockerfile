@@ -1,7 +1,7 @@
 ## Amazon Linux 2 with AWS CLI tools including ECS-CLI, python3/pip3 and Terraform
 
 ## Build Example:
-#   docker image build -t jmshum/aws-terraform-tools . 
+#   docker image build -t jmshum/aws-terraform-tools .
 
 ## Run Example:
 #   docker container run --rm -it jmshum/aws-terraform-tools bash
