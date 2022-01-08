@@ -1,4 +1,4 @@
-# Amazon Linux 2 with AWS CLI / ECS CLI tools
+# Amazon Linux 2 with AWS CLI / ECS CLI tools and Terraform
 This image is based on [Amazon Linux 2](https://hub.docker.com/_/amazonlinux) and also has the [AWS CLI](https://aws.amazon.com/cli/) tools, [ECS CLI](https://docs.aws.amazon.com/cli/latest/reference/ecs/index.html) tools, [python3](https://www.python.org/download/releases/3.0/) / pip3 and [Terraform](https://www.terraform.io) installed.
 
 ## Usage
