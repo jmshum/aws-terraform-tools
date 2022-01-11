@@ -92,12 +92,23 @@ resource "aws_security_group" "nginx" {
 }
 
 resource "aws_instance" "app_server" {
-  ami           = "ami-0a1eddae0b7f0a79f" #Amazonlinux 2 Kernel 5.10 64-bit ARM
-  instance_type = "t4g.nano"
+  ami                    = "ami-0a1eddae0b7f0a79f" #Amazonlinux 2 Kernel 5.10 64-bit ARM
+  instance_type          = "t4g.nano"
   vpc_security_group_ids = [aws_security_group.nginx.id]
 
   tags = {
     Name = "Terraform-Example-Instance"
   }
+
+  user_data = <<-EOF
+    #!/usr/bin/bash
+    sudo yum update -y
+    sudo amazon-linux-extras install docker
+    sudo yum install docker -y
+    sudo service docker start
+    sudo systemctl enable docker
+    sudo usermod -a -G docker ec2-user
+  EOF
+
 }
 ```
