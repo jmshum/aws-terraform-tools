@@ -108,6 +108,7 @@ resource "aws_instance" "app_server" {
     sudo service docker start
     sudo systemctl enable docker
     sudo usermod -a -G docker ec2-user
+    docker container run --rm --name nginx -d -p80:80 nginx
   EOF
 
 }
