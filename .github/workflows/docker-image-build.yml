@@ -13,11 +13,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: DockerHub login
-      env:
-        DOCKER_USER: ${{ secrets.DOCKER_USER }}
-        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
       run: |
-        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+        echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USER }} --password-stdin
     - name: Build the Docker image
       run: |
         docker buildx build --dockerfile Dockerfile --platform linux/amd64,linux/arm64 -t jmshum/amazonlinux-cli-tools --push . 
