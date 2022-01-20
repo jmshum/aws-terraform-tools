@@ -27,10 +27,10 @@ RUN pip3 install awscli
 RUN curl -o /usr/local/bin/ecs-cli https://amazon-ecs-cli.s3.amazonaws.com/ecs-cli-linux-amd64-latest && \
   chmod +x /usr/local/bin/ecs-cli
 
-# Install Terraform 1.1.3 Arm64
+# Install Terraform 1.1.4 Arm64
 RUN yum install -y wget unzip && \
-  wget https://releases.hashicorp.com/terraform/1.1.3/terraform_1.1.3_linux_arm64.zip && \
-  unzip terraform_1.1.3_linux_arm64.zip && \
+  wget https://releases.hashicorp.com/terraform/1.1.4/terraform_1.1.4_linux_arm64.zip && \
+  unzip terraform_1.1.4_linux_arm64.zip && \
   mv terraform /usr/local/bin/
 
 WORKDIR /root
