@@ -17,4 +17,7 @@ jobs:
         echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USER }} --password-stdin
     - name: Build the Docker image
       run: |
-        docker buildx build --platform linux/amd64,linux/arm64 -t jmshum/aws-terraform-tools --push . 
+        docker image build -t jmshum/aws-terraform-tools .
+    - name: Push the Docker image
+      run: |
+        docker push jmshum/aws-terraform-tools
