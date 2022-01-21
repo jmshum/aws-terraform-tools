@@ -28,7 +28,7 @@ RUN wget https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip -O awscliv2.z
   ./aws/install
 
 # Install AWS ECS-CLI
-RUN curl -Lo /usr/local/bin/ecs-cli https://amazon-ecs-cli.s3.amazonaws.com/ecs-cli-linux-amd64-latest && \
+RUN curl -Lo /usr/local/bin/ecs-cli https://amazon-ecs-cli.s3.amazonaws.com/ecs-cli-linux-arm64-latest && \
   chmod +x /usr/local/bin/ecs-cli
 
 # Install Terraform 1.1.4 Arm64
