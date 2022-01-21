@@ -16,21 +16,23 @@ RUN yum update -y && \
   yum install -y \
   python3 \
   vim \
+  wget \
+  unzip \
   groff && \
   yum clean all && \
   rm -rf /var/cache/yum
 
-# Install AWS CLI
-RUN pip3 install awscli
-
-# Install AWS ECS-CLI v2
-RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip" -o "awscliv2.zip" && \
+# Install AWS AWS CLI v2
+RUN wget https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip -O awscliv2.zip && \
   unzip awscliv2.zip && \
   ./aws/install
 
+# Install AWS ECS-CLI
+RUN curl -Lo /usr/local/bin/ecs-cli https://amazon-ecs-cli.s3.amazonaws.com/ecs-cli-linux-amd64-latest && \
+  chmod +x /usr/local/bin/ecs-cli
+
 # Install Terraform 1.1.4 Arm64
-RUN yum install -y wget unzip && \
-  wget https://releases.hashicorp.com/terraform/1.1.4/terraform_1.1.4_linux_arm64.zip && \
+RUN wget https://releases.hashicorp.com/terraform/1.1.4/terraform_1.1.4_linux_arm64.zip && \
   unzip terraform_1.1.4_linux_arm64.zip && \
   mv terraform /usr/local/bin/
 
