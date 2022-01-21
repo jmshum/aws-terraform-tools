@@ -18,6 +18,7 @@ RUN yum update -y && \
   vim \
   wget \
   unzip \
+  less \
   groff && \
   yum clean all && \
   rm -rf /var/cache/yum
