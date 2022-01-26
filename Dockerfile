@@ -23,7 +23,7 @@ RUN yum update -y && \
   yum clean all && \
   rm -rf /var/cache/yum
 
-# Install AWS AWS CLI v2
+# Install AWS CLI v2
 RUN wget https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip -O awscliv2.zip && \
   unzip awscliv2.zip && \
   ./aws/install
