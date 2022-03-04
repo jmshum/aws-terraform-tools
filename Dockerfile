@@ -32,9 +32,9 @@ RUN wget https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip -O awscliv2.z
 RUN curl -Lo /usr/local/bin/ecs-cli https://amazon-ecs-cli.s3.amazonaws.com/ecs-cli-linux-arm64-latest && \
   chmod +x /usr/local/bin/ecs-cli
 
-# Install Terraform 1.1.6 Arm64
-RUN wget https://releases.hashicorp.com/terraform/1.1.6/terraform_1.1.6_linux_arm64.zip && \
-  unzip terraform_1.1.6_linux_arm64.zip && \
+# Install Terraform 1.1.7 Arm64
+RUN wget https://releases.hashicorp.com/terraform/1.1.7/terraform_1.1.7_linux_arm64.zip && \
+  unzip terraform_1.1.7_linux_arm64.zip && \
   mv terraform /usr/local/bin/
 
 WORKDIR /root
