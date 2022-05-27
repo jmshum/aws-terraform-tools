@@ -33,8 +33,8 @@ RUN curl -Lo /usr/local/bin/ecs-cli https://amazon-ecs-cli.s3.amazonaws.com/ecs-
   chmod +x /usr/local/bin/ecs-cli
 
 # Install Terraform 1.1.8 Arm64
-RUN wget https://releases.hashicorp.com/terraform/1.1.8/terraform_1.1.8_linux_arm64.zip && \
-  unzip terraform_1.1.8_linux_arm64.zip && \
+RUN wget https://releases.hashicorp.com/terraform/1.2.1/terraform_1.2.1_linux_arm64.zip && \
+  unzip terraform_1.2.1_linux_arm64.zip && \
   mv terraform /usr/local/bin/
 
 WORKDIR /root
